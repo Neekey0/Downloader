@@ -131,7 +131,7 @@ public class MainGUI {
 
     private JPanel jPanelOne;
 
-
+    private JProgressBar downloadProgress;
     MainGUI(){
         loadGUIComponents();
     }
@@ -147,7 +147,8 @@ public class MainGUI {
             startDownload(userText);
             JOptionPane.showMessageDialog(jFrame,"User input : "+userText);
         });
-
+        downloadProgress = new JProgressBar();
+downloadProgress.setString("22");
         jPanelOne = new JPanel();
         jPanelOne.add(textBoxLabel);
         jPanelOne.add(downloadUrlField);
@@ -155,9 +156,9 @@ public class MainGUI {
 
         jFrame.add(jPanelOne);
         jFrame.add(downloadBtm);
+        jFrame.add(downloadProgress);
 
         jFrame.setLayout(new GridLayout(3,1));
-
         jFrame.setVisible(true);
 
     }
